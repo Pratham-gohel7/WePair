@@ -1,0 +1,7 @@
+import AC_img1 from "./acImg.jpeg"
+import AC_img2 from "./acImg2.jpeg"
+import PC_img1 from "./img1.jpeg"
+import Mobile_img1 from "./mobileImg.jpeg"
+import TV_img1 from "./tvImg.jpeg"
+ 
+export {AC_img1, AC_img2, PC_img1, Mobile_img1, TV_img1}

@@ -1,74 +1,93 @@
-import React from 'react'
-import car1 from "../../assets/car1.jpeg"
-import car2 from "../../assets/car2.jpeg"
+import React from "react";
+import car1 from "../../assets/car1.jpeg";
+import car2 from "../../assets/car2.jpeg";
+import {Mobile, AC, Washing_Machine, Tv, Computer} from "../../assets/icons/index.js" 
+import { AC_img1, AC_img2, PC_img1, Mobile_img1, TV_img1 } from "../../assets/images/index.js";
 
-import { Card,
-    CardHeader,
-    CardBody,
-    CardFooter,
-    Typography,
-    Avatar,
-    Tooltip,
- } from '@material-tailwind/react';
 
 const Hero = () => {
-    const imageList = [
-        {
-            id: 1,
-            image: car1,
-        },
-        {
-            id: 2,
-            image: car2,
-        }
-    ]
+  const imageList = [
+    {
+      id: 1,
+      image: car1,
+    },
+    { 
+      id: 2,
+      image: car2,
+    },
+  ];
   return (
-    <div className='w-full dark:text-white flex flex-col md:flex-row justify-between mt-4'>
-        <div className='md:w-auto'>
-            <div className='sm:inline-block flex flex-col justify-center items-center'>
-                <h2 className='text-2xl m-auto text-center font-semibold md:text-4xl md:inline-block md:items-center md:text-center md:font-semibold'>Repairing Services at Door Step</h2>
+    <div className="w-full dark:text-white flex flex-col md:flex-row justify-between mt-4 md:justify-center md:items-center">
+      <div className="md:w-[50%] md:m-4">
+        <div className="sm:inline-block flex flex-col justify-center items-center">
+          <h2 className="text-2xl m-auto text-center font-semibold md:text-4xl md:inline-block md:items-center md:text-center md:font-semibold">
+            Repairing Services at Door Step
+          </h2>
+          <div className="w-[81%] h-auto border-[1px] border-slate-200 dark:border-slate-800 shadow-xl mt-5 p-5 rounded-lg">
+            <div>
+              <h2 className="ml-5 font-semibold text-slate text-slate-600 dark:text-slate-400">What You Are Looking For?</h2>
             </div>
-            <div className='h-auto w-auto bg-red-200'>
-                <div className='border-blue-400 bg-blue-400 m-[10%] text-center'>
-                <Card className="max-w-[24rem] overflow-hidden">
-      <CardHeader
-        floated={false}
-        shadow={false}
-        color="transparent"
-        className="m-0 rounded-none"
-      >
-        <img
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
-          alt="ui/ux review check"
-        />
-      </CardHeader>
-      <CardBody>
-        <Typography variant="h4" color="blue-gray">
-          UI/UX Review Check
-        </Typography>
-        <Typography variant="lead" color="gray" className="mt-3 font-normal">
-          Because it&apos;s about motivating the doers. Because I&apos;m here to
-          follow my dreams and inspire others.
-        </Typography>
-      </CardBody>
-      <CardFooter className="flex items-center justify-between">
-        <div className="flex items-center -space-x-3">
-                
-        </div>
-        <Typography className="font-normal">January 10</Typography>
-      </CardFooter>
-    </Card>
+            <div className="flex flex-wrap my-5">
+              <div className="mx-4 text-center">
+                <div className="w-[100px] h-[60px] flex flex-col border-0 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-900 duration-300 justify-center items-center">
+                  <img src={Computer} alt="" className="w-[50px] h-[50px]"/>
                 </div>
+                <p className="text-sm font-sans text-slate-600 dark:text-slate-300">Computer Repairing</p>
+              </div>
+              <div className="mx-4 text-center">
+                <div className="w-[100px] h-[60px] flex flex-col border-0 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-900 duration-300 justify-center items-center">
+                  <img src={AC} alt="" className="w-[50px] h-[50px]"/>
+                </div>
+                <p className="text-sm font-sans text-slate-600 dark:text-slate-300">AC Repairing</p>
+              </div>
+              <div className="mx-4 text-center">
+                <div className="w-[100px] h-[60px] flex flex-col border-0 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-900 duration-300 justify-center items-center">
+                  <img src={Tv} alt="" className="w-[50px] h-[50px]"/>
+                </div>
+                <p className="text-sm font-sans text-slate-600 dark:text-slate-300">Tv Repairing</p>
+              </div>
+              <div className="flex mt-5 text-center">
+                <div className="mx-4">
+                  <div className="w-[180px] h-[90px] flex flex-col border-0 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-900 duration-300 justify-center items-center">
+                    <img src={Washing_Machine} alt="" className="w-[80px] h-[80px]"/>
+                  </div>
+                  <p className="text-sm font-sans text-slate-600 dark:text-slate-300">Washing Machine Repairing</p>
+                </div>
+                <div className="mx-4">
+                  <div className="w-[180px] h-[90px] flex flex-col border-0 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-900 duration-300 justify-center items-center">
+                    <img src={Mobile} alt="" className="w-[80px] h-[80px]"/>
+                  </div>
+                  <p className="text-sm font-sans text-slate-600 dark:text-slate-300">Mobile Repairing</p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-        <div className='md:w-auto flex flex-wrap gap-4 justify-around'>
-            <img src={car1} alt="car1" className='w-[45%] flex justify-center items-center rounded-xl'/>
-            <img src={car1} alt="car1" className='w-[45%] flex justify-center items-center rounded-xl'/>
-            <img src={car1} alt="car1" className='w-[45%] flex justify-center items-center rounded-xl'/>
-            <img src={car1} alt="car1" className='w-[45%] flex justify-center items-center rounded-xl'/>
-        </div>
+      </div>
+      <div className="hidden md:w-[50%] md:flex md:flex-wrap md:gap-4 md:justify-around md:mt-5">
+        <img
+          src={PC_img1}
+          alt="car1"
+          className="w-[55%] flex justify-center items-center rounded-xl"
+        />
+        <img
+          src={TV_img1}
+          alt="car1"
+          className="w-[35%] flex justify-center items-center rounded-xl"
+        />
+        <img
+          src={AC_img1}
+          alt="car1"
+          className="w-[50%] flex justify-center items-center rounded-xl"
+        />
+        <img
+          src={Mobile_img1}
+          alt="car1"
+          className="w-[45%] flex justify-center items-center rounded-xl"
+        />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
