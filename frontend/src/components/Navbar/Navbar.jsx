@@ -5,7 +5,7 @@ import ThemeBtn from '../ThemeBtn'
 
 const Navbar = () => {    
   return (
-    <div className='shadow-md bg-white dark:bg-slate-800 dark:text-white'>
+    <div className='shadow-md bg-slate-100 dark:bg-slate-800 dark:text-white'>
         <div className=' py-1'>
             <div className='container flex justify-between items-center '>
                 <div>

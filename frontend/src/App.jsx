@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import { ThemeProvider } from './context/Theme'
 import Hero from './components/Hero/Hero';
+import ItemsSlider from "./components/Slider/ItemsSlider"
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
     <ThemeProvider value={{themeMode, darkMode, lightMode}}>
       <Navbar/>
       <Hero/>
+      <ItemsSlider/>
     </ThemeProvider>
   )
 }

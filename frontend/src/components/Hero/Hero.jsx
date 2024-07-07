@@ -1,26 +1,14 @@
 import React from "react";
-import car1 from "../../assets/car1.jpeg";
-import car2 from "../../assets/car2.jpeg";
 import {Mobile, AC, Washing_Machine, Tv, Computer} from "../../assets/icons/index.js" 
-import { AC_img1, AC_img2, PC_img1, Mobile_img1, TV_img1 } from "../../assets/images/index.js";
+import { AC_img1, AC_img2, PC_img1, Mobile_img1, TV_img1, Mobile_img, IC, CPU, ALL} from "../../assets/images/index.js";
 
 
 const Hero = () => {
-  const imageList = [
-    {
-      id: 1,
-      image: car1,
-    },
-    { 
-      id: 2,
-      image: car2,
-    },
-  ];
   return (
     <div className="w-full dark:text-white flex flex-col md:flex-row justify-between mt-4 md:justify-center md:items-center">
       <div className="md:w-[50%] md:m-4">
         <div className="sm:inline-block flex flex-col justify-center items-center">
-          <h2 className="text-2xl m-auto text-center font-semibold md:text-4xl md:inline-block md:items-center md:text-center md:font-semibold">
+          <h2 className="text-2xl m-auto text-center font-semibold md:text-3xl md:inline-block md:ml-5 md:items-center md:text-center md:font-semibold ">
             Repairing Services at Door Step
           </h2>
           <div className="w-[81%] h-auto border-[1px] border-slate-200 dark:border-slate-800 shadow-xl mt-5 p-5 rounded-lg">
@@ -64,27 +52,24 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="hidden md:w-[50%] md:flex md:flex-wrap md:gap-4 md:justify-around md:mt-5">
+      <div className="hidden md:w-[50%] md:flex md:flex-wrap md:gap-4 md:mt-5 md:justify-evenly">
         <img
-          src={PC_img1}
+          src={IC}
           alt="car1"
-          className="w-[55%] flex justify-center items-center rounded-xl"
+          className="w-[50%] flex justify-center items-center rounded-xl bg-accent-dark bg-cover"
         />
-        <img
-          src={TV_img1}
-          alt="car1"
-          className="w-[35%] flex justify-center items-center rounded-xl"
-        />
-        <img
-          src={AC_img1}
-          alt="car1"
-          className="w-[50%] flex justify-center items-center rounded-xl"
-        />
-        <img
-          src={Mobile_img1}
-          alt="car1"
-          className="w-[45%] flex justify-center items-center rounded-xl"
-        />
+        <div className="w-[40%] flex flex-col items-center gap-5">
+          <img
+            src={TV_img1}
+            alt="car1"
+            className="w-[100%] flex justify-center items-center rounded-xl "
+          />
+          <img
+            src={Mobile_img1}
+            alt="car1"
+            className="w-[100%] h-[100%] flex justify-center items-center rounded-xl"
+          />
+        </div>
       </div>
     </div>
   );
