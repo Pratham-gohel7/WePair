@@ -34,7 +34,7 @@ const imgList = [
 const ItemsSlider = () => {
   var settings = {
     dots: true,
-    arrows: true,
+    arrows: false,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
@@ -63,6 +63,7 @@ const ItemsSlider = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1
+
         }
       }
     ]
@@ -77,7 +78,7 @@ const ItemsSlider = () => {
         imgList.map((item) => (
           <div className='items-center'>
             <button className='bg-[#01050017] absolute mx-20 my-16 p-2 rounded-2xl text-slate-800 text-sm font-semibold'>Book Now</button>
-            <img src={item.img} alt="" className='w-[100%] h-[180px] rounded- px-5 hover:width-[200px]'/>
+            <img src={item.img} alt="" className=' rounded- px-5'/>
           </div>
         ))
       }

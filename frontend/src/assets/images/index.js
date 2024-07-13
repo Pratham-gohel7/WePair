@@ -6,6 +6,7 @@ import TV_img1 from "./tvImg.jpeg"
 import Mobile_img from "./Mobile.jpg"
 import IC from "./IC.jpg"
 import CPU from "./CPU.jpg"
-import ALL from "./ALL.png"
- 
-export {AC_img1, AC_img2, PC_img1, Mobile_img1, TV_img1, Mobile_img, IC, CPU, ALL}
+import Vec_Mobile from "./vec-mobile.png"
+import Mob from "./mob.jpg"
+
+export {AC_img1, AC_img2, PC_img1, Mobile_img1, TV_img1, Mobile_img, IC, CPU, Vec_Mobile, Mob}
