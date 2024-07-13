@@ -9,33 +9,23 @@ import MostUsed from "./components/MostUsed/index.jsx"
 import Footer from './components/Footer/Footer.jsx';
 import Widget from './components/Try/Widget.jsx';
 import Header from './components/Header/index.jsx';
+import Services from "./components/Services/index.jsx"
 
 
 function App() {
-  const [themeMode, setThemeMode] = useState("light");
-  const lightMode = () => {
-    setThemeMode("light")
-  }
-
-  const darkMode = () => {
-    setThemeMode("dark")
-  }
-
-  useEffect(() => {
-    document.querySelector('html').classList.remove("light", "dark");
-    document.querySelector('html').classList.add(themeMode)
-  }, [themeMode])
+  
   return (
-    <ThemeProvider value={{themeMode, darkMode, lightMode}}>
+    <>
       <Header/>
       <Hero1/>
+      <Services/> 
       {/* <Navbar/>
       <Hero/>
       <ItemsSlider/>
       <MostUsed/>
       <Footer/> */}
       {/* <Widget/> */}
-    </ThemeProvider>
+    </>
   )
 }
 

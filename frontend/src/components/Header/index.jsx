@@ -38,7 +38,7 @@ const Header = () => {
       setIcon(<MdDarkMode />)
       setLogo(LogoDark)
     }
-}, [setIsDarkMode, setLogo])
+}, [])
 
   return (
     <header className="dark:text-slate-100 p-1 flex justify-between items-center">
