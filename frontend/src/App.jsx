@@ -7,9 +7,9 @@ import Hero1 from './components/Hero/index.jsx';
 import ItemsSlider from "./components/Slider/ItemsSlider"
 import MostUsed from "./components/MostUsed/index.jsx"
 import Footer from './components/Footer/Footer.jsx';
-import Widget from './components/Try/Widget.jsx';
 import Header from './components/Header/index.jsx';
 import Services from "./components/Services/index.jsx"
+import Testimonials from './components/Testimonials/Testimonials.jsx';
 
 
 function App() {
@@ -19,12 +19,14 @@ function App() {
       <Header/>
       <Hero1/>
       <Services/> 
+      <Testimonials/>
+      <Footer/>
       {/* <Navbar/>
       <Hero/>
       <ItemsSlider/>
       <MostUsed/>
       <Footer/> */}
-      {/* <Widget/> */}
+      
     </>
   )
 }

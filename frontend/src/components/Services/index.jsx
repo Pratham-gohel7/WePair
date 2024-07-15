@@ -24,7 +24,7 @@ const index = () => {
                 <div>
                     <img src={service.icon} alt={`${service.title} icon`} className="w-16 h-16 mx-auto mb-4" />
                     <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                    <p className="text-gray-600 dark:text-[#FBEAEB]">{service.description}</p>
+                    <p className="text-gray-600 dark:text-[#FBEAEB] text-sm">{service.description}</p>
                 </div>
                 <div>
                     <button className='px-3 py-2 flex justify-center items-center gap-1 text-white bg-slate-800 rounded-xl '>Explore Now <FaArrowRight /></button>
@@ -34,6 +34,7 @@ const index = () => {
         </div>
       </div>
     </div>
+    
   )
 }
 

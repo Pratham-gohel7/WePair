@@ -33,13 +33,13 @@ const imgList = [
 ]
 const ItemsSlider = () => {
   var settings = {
-    dots: true,
-    arrows: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 4,
-    initialSlide: 0,
+      dots: true,
+      arrows: false,
+      infinite: false,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 4,
+      initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
