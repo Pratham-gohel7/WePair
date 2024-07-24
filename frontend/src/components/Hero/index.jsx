@@ -69,8 +69,8 @@ const index = () => {
     // </div>
 
     <div className="relative flex items-center justify-center min-h-screen mx-4 rounded-xl">
-      <div className="absolute inset-0 rounded-xl"></div>
-      <div className="relative z-10 container mx-auto px-6 py-12">
+      <div className="relative inset-0 rounded-xl"></div>
+      <div className="relative container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="text-black dark:text-slate-300 text-left">
             <motion.h1 
@@ -82,7 +82,7 @@ const index = () => {
               Electronic Gadgets Repair at Your Doorstep
             </motion.h1>
             <motion.p 
-              className="text-xl md:text-xl mb-6" 
+              className="text-xl md:text-xl mb-6 font-sans" 
               initial={{ opacity: 0, x: -100 }} 
               animate={{ opacity: 1, x: 0 }} 
               transition={{ duration: 1 }}
@@ -108,6 +108,7 @@ const index = () => {
         </div>
       </div>
     </div>
+    
   )
 }
 

@@ -5,6 +5,7 @@ import { MdLightMode } from "react-icons/md";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
+import Login from '../Login';
 import ThemeBtn from '../ThemeBtn';
 
 const Header = () => {
@@ -24,24 +25,26 @@ const Header = () => {
     setIsDarkMode(!isDarkMode);
     if (isDarkMode) {
       document.documentElement.classList.remove('dark');
+      setLogo(LogoLight)
     } else {
+      document.documentElement.classList.remove('light');
       document.documentElement.classList.add('dark');
+      setLogo(LogoDark);
     }
   };
   
   useEffect(() => {
     if(isDarkMode){
       setIcon(<MdDarkMode />)
-      setLogo(LogoLight)        
+              
     }
     else{
       setIcon(<MdDarkMode />)
-      setLogo(LogoDark)
     }
 }, [])
 
   return (
-    <header className="dark:text-slate-100 p-1 flex justify-between items-center">
+    <header className="dark:text-slate-100 light:bg-red-800 p-1 flex justify-between items-center">
       <div className="logo">
         <img src={Logo} alt="Company Logo" className="h-10" />
       </div>
@@ -55,7 +58,7 @@ const Header = () => {
         </ul>
         
       </nav>
-      <nav className={`navbar bg-rose-300 ${isMenuOpen ? 'block' : 'hidden'} md:hidden fixed top-12 right-0 h-full w-full flex flex-col items-center  p-8 transform ${isMenuOpen ? 'translate-y-0 duration-1000' : 'translate-y-1 duration-1000'} transition-transform md:relative md:translate-x-0 md:flex md:items-center md:w-auto md:bg-transparent md:p-0`}>
+      <nav className={`navbar bg-slate-100 dark:bg-slate-800 ${isMenuOpen ? 'block' : 'hidden'} md:hidden fixed top-12 right-0 h-full w-full flex flex-col items-center  p-8 transform ${isMenuOpen ? 'translate-y-0 duration-1000' : 'translate-y-1 duration-1000'} transition-transform md:relative md:translate-x-0 md:flex md:items-center md:w-auto md:bg-transparent md:p-0 z-10`}>
         <ul className="flex flex-col md:flex-row md:items-center">  
           <li className="m-2 md:mx-4"><a href="#home">Home</a></li>
           <li className="m-2 md:mx-4"><a href="#services">Services</a></li>
@@ -63,9 +66,9 @@ const Header = () => {
           <li className="m-2 md:mx-4"><a href="#contact">Contact</a></li>
         </ul>
         <div className="actions flex items-center">
-          <button className="login-button bg-blue-500 text-white rounded-xl px-4 py-2 m-2">
-            Login
-          </button>
+            <button className="">
+              <Login/>
+            </button>
           <button
             className="dark-mode-toggle dark:text-slate-100 px-4 py-2 m-2 text-2xl"
             onClick={toggleDarkMode}
@@ -77,8 +80,8 @@ const Header = () => {
       </nav>
       
       <div className="actions hidden md:flex md:items-center">
-        <button className="login-button bg-blue-500 text-white rounded-xl px-4 py-2 m-2">
-          Login
+        <button className="">
+          <Login/>
         </button>
         <button
           className="dark-mode-toggle dark:text-slate-100 px-4 py-2 m-2 text-2xl"
@@ -88,6 +91,7 @@ const Header = () => {
         </button>
         {/* <ThemeBtn/> */}
       </div>
+      
       <div className="md:hidden">
             <button
               onClick={toggleMenu}

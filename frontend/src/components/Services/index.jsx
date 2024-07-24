@@ -20,7 +20,7 @@ const index = () => {
         <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <div key={service.id} className='service-card flex flex-col justify-between items-center gap-8 bg-white dark:bg-[#2F3C7E] dark:text-[#FBEAEB] p-8 rounded-lg shadow-lg text-center hover:border-4 hover:border-sky-500'>
+            <div key={service.id} className='service-card flex flex-col justify-between items-center gap-8 bg-white dark:bg-[#2F3C7E] dark:text-[#FBEAEB] p-8 rounded-lg shadow-lg text-center hover:shadow-[0 0 0 2px #d0d0d0]'>
                 <div>
                     <img src={service.icon} alt={`${service.title} icon`} className="w-16 h-16 mx-auto mb-4" />
                     <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
@@ -34,6 +34,7 @@ const index = () => {
         </div>
       </div>
     </div>
+    // hover:border-4 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-400
     
   )
 }

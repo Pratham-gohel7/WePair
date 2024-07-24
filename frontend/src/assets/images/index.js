@@ -8,5 +8,7 @@ import IC from "./IC.jpg"
 import CPU from "./CPU.jpg"
 import Vec_Mobile from "./vec-mobile.png"
 import Mob from "./mob.jpg"
+import ScreenReplacement from "./screen-repair.jpeg"
+import WashingMachine from "./washingmachineImg.jpeg"
 
-export {AC_img1, AC_img2, PC_img1, Mobile_img1, TV_img1, Mobile_img, IC, CPU, Vec_Mobile, Mob}
+export {AC_img1, AC_img2, PC_img1, Mobile_img1, TV_img1, Mobile_img, IC, CPU, Vec_Mobile, Mob, ScreenReplacement, WashingMachine}

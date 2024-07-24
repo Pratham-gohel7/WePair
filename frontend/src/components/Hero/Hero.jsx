@@ -5,7 +5,7 @@ import { AC_img1, AC_img2, PC_img1, Mobile_img1, TV_img1, Mobile_img, IC, CPU} f
 
 const Hero = () => {
   return (
-    <div className="w-full dark:text-white flex flex-col md:flex-row justify-between mt-4 md:justify-center md:items-center">
+    <div className="w-full dark:text-white flex flex-col md:flex-row justify-between mt-2 md:mt-4 md:justify-center md:items-center">
       <div className="md:w-[50%] md:m-4">
         <div className="sm:inline-block flex flex-col justify-center items-center">
           <h2 className="text-2xl m-auto text-center font-semibold md:text-3xl md:inline-block md:ml-5 md:items-center md:text-center md:font-semibold ">

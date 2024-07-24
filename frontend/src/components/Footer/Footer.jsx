@@ -41,9 +41,9 @@ const Footer = () => {
                 <div className="w-full md:w-1/4">
                     <h3 className="text-lg font-semibold text-gray-800 mb-4">Contact Us</h3>
                     <p className="text-gray-600 text-sm">
-                        <strong>Address:</strong> 123 Repair St, FixCity, FC 12345<br />
-                        <strong>Phone:</strong> (123) 456-7890<br />
-                        <strong>Email:</strong> support@gadgetrepair.com
+                        <strong>Address:</strong> Vadodara<br />
+                        <strong>Phone:</strong> (123) 9999999999<br />
+                        <strong>Email:</strong> support@pratham.com
                     </p>
                     <div className="mt-4 space-x-3">
                         <a href="#" className="text-blue-500 hover:text-blue-700">Facebook</a>
