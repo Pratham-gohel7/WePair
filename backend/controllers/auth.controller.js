@@ -1,5 +1,5 @@
 import { User } from "../models/user.model.js";
-import jwt from "jsonwebtoken";
+import jwt, { decode } from "jsonwebtoken";
 import {redis} from "../lib/redis.js"
 
 const generateTokens = (userId) => {
@@ -94,6 +94,7 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
     try{
         const {email, password} = req.body;
+        
         if([email, password].some((field) => field.trim() === "")){
             return res.status(400).json({error: "Please fill in all fields."});
         }
@@ -102,29 +103,71 @@ export const login = async (req, res) => {
         if(!user){
             return res.status(404).json({message: "Email is invalid."})
         }
-    
-        const isPasswordCorrect = await User.isPasswordCorrect(password);
+        
+        const isPasswordCorrect = await user.isPasswordCorrect(password);
         if(!isPasswordCorrect){
             return res.status(403).json({message: "Password is incorrect."})
         }
         
         const {accessToken, refreshToken} = generateTokens(user._id)
-    
+        
         setCookies(res, accessToken, refreshToken);
+        await storeRefreshToken(user._id, refreshToken);
     
-        res.status(201).json({user: {
+        res.status(201).json({
             id: user._id,
+            fullName: user.fullName,
             email: user.email,
             role: user.role,
-            accessToken,
-            refreshToken,
-        }}, {message: "Logged in successfully."});
+        });
 
     } catch (error) {
-        res.status(500).json({Error: "Error in login controller."})
+        res.status(500).json({Error: "Error in login controller."});
     }
 }
 
-export const logout = (req, res) => {
-    res.send(`this is an logout page`);
+export const logout = async (req, res) => {
+    try {
+        const refreshToken = req.cookies.refreshToken;
+        if(refreshToken){
+            const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
+            await redis.del(`refresh_token:${decoded.userId}`);
+        }
+
+        res.clearCookie("accessToken"); 
+        res.clearCookie("refreshToken");
+
+        res.status(200).json({message: "Logged Out successfully."})
+    } catch (error) {
+        res.status(500).json({Error: "Error in logout controller."});
+    }
+}
+
+export const refresh_accessToken = async (req, res) => {
+    try {
+        const refreshToken = req.cookies.refreshToken;
+    
+        if(!refreshToken){
+            return res.status(401).json({message: "Unauthorized"});
+        }
+    
+        const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
+        const storedToken = await redis.get(`refresh_token:${decoded.userId}`);
+    
+        if(refreshToken !== storedToken){
+            return res.status(401).json({message: "Invalid refresh token."})
+        }
+    
+        const accessToken = jwt.sign({userId: decoded.userId}, process.env.ACCESS_TOKEN_SECRET, {expiresIn: process.env.ACCESS_TOKEN_EXPIRY});
+        res.cookie("accessToken", accessToken, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "strict",
+            maxAge: 30 * 60 * 1000
+        })
+    
+        res.status(201).json({message: "Access Token refreshed Successfully."});
+    } catch (error) {
+        res.status(500).json({Error: "Error in refreshingToken controller."});
+    }
 }
