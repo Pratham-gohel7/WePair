@@ -123,7 +123,7 @@ export const toggleFeaturedService = async (req, res) => {
             service.isFeatured = !service.isFeatured;
             const updatedServices = await service.save();
 
-            await updateFeaturedServicesCache();
+            await updateFeaturedServicesCachename();
             res.json(updatedServices);
         }
     } catch (error) {
