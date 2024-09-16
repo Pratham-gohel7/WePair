@@ -171,3 +171,12 @@ export const refresh_accessToken = async (req, res) => {
         res.status(500).json({Error: "Error in refreshingToken controller."});
     }
 }
+
+export const getProfile = async (req, res) => {
+    try {
+        res.json(req.user);
+    } catch (error) {
+        console.log("Error in getProfile controller", error);
+        res.status(501).json({message: "Server Error!", error: error.message});        
+    }
+}
